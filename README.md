@@ -6,6 +6,16 @@ Des hexagones dans l'Hexagone, parce qu'il n'y a pas de raison pour ne pas le fa
 
 Tuilage hexagonal approximatif avec [tilegram](https://github.com/rxlacroix/tilegram) issu de https://gitlab.com/lajh87/makeTilegram/
 
+-> QUE COG 2019 métropole
+
+```r 
+devtools::install_github("rxlacroix/cartelHEX/cartelHEX@RPackage")
+library(cartelHEX)
+comHEX <- loadMap(COG=2019,nivsupra="COM")
+plot(comHEX["Population"])
+```
+
+
 <img src="cartelHEX.png"/>
 
 <img src="hexcompop.png"/>
