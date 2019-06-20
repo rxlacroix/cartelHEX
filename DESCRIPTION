@@ -1,12 +1,18 @@
-Package: CARTElette
+Package: cartelHEX
 Type: Package
-Title: Création de couches cartographiques à partir du code officiel géographique
+Title: Création de couches cartographiques à partir du code officiel géographique (COG) et des couches IGN
 Version: 1.0.0
 Authors@R: c(person(family="antuki", role = c("cre","aut"),email="kim.antunez@laposte.net"))
-Description:  Création de couches cartographiques à partir du code officiel géographique
+Description: Ce package permet de charger dans R les couches cartographiques françaises adaptées à vos données (millésime + niveau géographique adapté à un certain code officiel géographique).
 License: GPL (>= 2) | file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: http://github.com/antuki/CARTElette
-BugReports: http://github.com/antuki/CARTElette/issues
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.1
+URL: http://github.com/rxlacroix/cartelHEX
+BugReports: http://github.com/rxlacroix/cartelHEX/issues
+Suggests: 
+    COGugaison
+Imports:
+    dplyr,
+    sf, 
+    utils

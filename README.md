@@ -9,7 +9,7 @@ Tuilage hexagonal approximatif avec [tilegram](https://github.com/rxlacroix/tile
 -> QUE COG 2019 métropole
 
 ```r 
-devtools::install_github("rxlacroix/cartelHEX/cartelHEX@RPackage")
+devtools::install_github("rxlacroix/cartelHEX")
 library(cartelHEX)
 comHEX <- loadMap(COG=2019,nivsupra="COM")
 plot(comHEX["Population"])
