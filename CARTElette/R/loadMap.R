@@ -52,23 +52,11 @@
 
 
 loadMap <- function(destfile=tempdir(),COG=annee_ref,nivsupra,enlever_PLM=TRUE,donnees_insee=F){
-    shpOrigin="IGN"
-    string_insee <- ifelse(donnees_insee & COG==2015 & nivsupra=="COM","_insee","")
-    url <- paste0("https://raw.githubusercontent.com/antuki/CARTElette/master/couches_carto/",shpOrigin,"/COG",COG,"/")
-    download.file(paste0(url,nivsupra,"_",COG,string_insee,"_CARTElette.dbf"),destfile = paste0(destfile,"/",nivsupra,"_",COG,"_CARTElette.dbf"),method="auto",mode="wb")
-    download.file(paste0(url,nivsupra,"_",COG,string_insee,"_CARTElette.prj"),destfile = paste0(destfile,"/",nivsupra,"_",COG,"_CARTElette.prj"),method="auto",mode="wb")
-    download.file(paste0(url,nivsupra,"_",COG,string_insee,"_CARTElette.shp"),destfile = paste0(destfile,"/",nivsupra,"_",COG,"_CARTElette.shp"),method="auto",mode="wb")
-    download.file(paste0(url,nivsupra,"_",COG,string_insee,"_CARTElette.shx"),destfile = paste0(destfile,"/",nivsupra,"_",COG,"_CARTElette.shx"),method="auto",mode="wb")
+    url <- paste0("https://raw.githubusercontent.com/rxlacroix/cartelHEX/master/couches_carto/COG",COG,"/")
+    download.file(paste0(url,nivsupra,"_",COG,"_cartelHEX.gpkg"),destfile = paste0(destfile,"/",nivsupra,"_",COG,"_cartelHEX.gpkg"),method="auto",mode="wb")
 
 
-    couche <- sf::st_read(dsn=paste0(destfile,"/",nivsupra,"_",COG,"_CARTElette.shp"),stringsAsFactors = F)
-
-    if(nivsupra=="COM" & enlever_PLM & COG>=2019){
-      if(COG>=2019){
-        couche <- couche %>%
-          filter(substr(INSEE_COM,1,3)!="751" & substr(INSEE_COM,1,4)!="6938" & substr(INSEE_COM,1,3)!="132")
-      }
-    }
+    couche <- sf::st_read(dsn=paste0(destfile,"/",nivsupra,"_",COG,"_cartelHEX.gpkg"),stringsAsFactors = F)
 
     return(couche)
 
