@@ -1,6 +1,6 @@
 Package: cartelHEX
 Type: Package
-Title: Création de couches cartographiques à partir du code officiel géographique (COG) et des couches IGN
+Title: Tuiles hexagonales depuis CARTElette
 Version: 1.0.0
 Authors@R: c(person(family="antuki", role = c("cre","aut"),email="kim.antunez@laposte.net"))
 Description: Ce package permet de charger dans R les couches cartographiques françaises adaptées à vos données (millésime + niveau géographique adapté à un certain code officiel géographique).
