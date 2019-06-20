@@ -12,7 +12,7 @@ Tuilage hexagonal approximatif avec [tilegram](https://github.com/rxlacroix/tile
 devtools::install_github("rxlacroix/cartelHEX")
 library(cartelHEX)
 comHEX <- loadMap(COG=2019,nivsupra="COM")
-plot(comHEX["Population"])
+plot(comHEX["INSEE_DEP"])
 ```
 
 
